@@ -3,7 +3,6 @@ import numpy as np
 def findCenter():
 
     X = []
-    Y = []
     img = cv2.imread('/home/purvikpatel_/catkin_ws/src/img_processing/scripts/image.png', 1)
     hsv = cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
     mask = cv2.inRange(hsv,(88,100,100),(130,255,255))
