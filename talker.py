@@ -6,13 +6,16 @@ from image_processing import findCenter
 def talker():
     pub = rospy.Publisher('chatter',centers, queue_size = 10)
     rospy.init_node('talker',anonymous=True)
-    
+    rate = rospy.Rate(10)
     msg = centers()
     msg.centers = findCenter()
 
-    
-    rospy.loginfo(msg)
-    pub.publish(msg)
+    while not rospy.is_shutdown():
+        rospy.loginfo(msg)
+        pub.publish(msg)
+        rate.sleep()
+
+
     
 
 
