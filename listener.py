@@ -3,8 +3,8 @@ import rospy
 from img_processing.msg import centers
 
 def callback(data):
-    x = data.centers
-    print(x)
+    rospy.loginfo(data.centers)
+    print(data.centers)
 
 def listener():
     rospy.init_node('listener',anonymous=True)
